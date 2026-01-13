@@ -4,11 +4,11 @@
 
 This repository contains the implementation of "Personalized Federated Learning with Fuzzy Clustering for Dysarthric Speech Recognition" - a novel approach that uses Fuzzy C-means clustering in federated learning to handle pathological speech recognition.
 
-## ⚠️ Important: Dataset Configuration Required
+## Important: Dataset Configuration Required
 
 **This repository has been cleaned to remove all dataset-specific information. You MUST configure the paths and parameters for your own pathological speech dataset before running the code.**
 
-## 🔧 Required Configurations
+## Required Configurations
 
 ### 1. Dataset Paths and Structure
 
@@ -112,7 +112,7 @@ Update the speaker ID lists and mappings:
    - Default: `facebook/data2vec-audio-large-960h`
    - Or update `--pretrain_name` to your preferred model
 
-## 📋 Installation
+## Installation
 
 ```bash
 # Install required packages
@@ -122,7 +122,7 @@ pip install librosa soundfile pandas numpy
 pip install tensorboardX tqdm jiwer
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Stage 1: Global ASR Training
 ```bash
@@ -144,7 +144,7 @@ python federated_main_cleaned.py --FL_STAGE 4 --use_soft_clustering --epochs 10
 python feature_selection_multi_ADReSS_cleaned.py --method ALL --audio_dir ./data/clips --train_csv ./data/train.csv
 ```
 
-## 🔧 Key Parameters
+## Key Parameters
 
 - `--use_soft_clustering`: Enable Fuzzy C-means instead of K-means
 - `--fuzzy_m`: Fuzzifier parameter (default: 2.0)
@@ -152,7 +152,7 @@ python feature_selection_multi_ADReSS_cleaned.py --method ALL --audio_dir ./data
 - `--use_membership_weighted_avg`: Use membership weights in model aggregation
 - `--num_lms`: Number of clusters (default: 5)
 
-## 📁 Output Structure
+## Output Structure
 
 ```
 results/
@@ -169,7 +169,7 @@ models/
 └── k_means_model                     # Clustering model
 ```
 
-## 🔄 Workflow
+## Workflow
 
 1. **Data Preparation**: Configure paths and format your dataset
 2. **Global Training**: Train initial ASR model (Stage 1)
@@ -177,7 +177,7 @@ models/
 4. **Federated Training**: Train specialized models per cluster (Stage 4)
 5. **Evaluation**: Analyze performance and clustering quality
 
-## ⚠️ Important Notes
+## Important Notes
 
 1. **Privacy Compliance**: Ensure your dataset usage complies with relevant privacy regulations
 2. **Clinical Validation**: Validate results with clinical experts for medical applications
